@@ -127,7 +127,7 @@ export default function TeamPage() {
       name: "Hannah James",
       position: "HR",
       image: hr,
-      linkedin: "https://linkedin.com/in/hannahjames"
+      linkedin: "https://www.linkedin.com/in/hannah-james-36129b288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     },
     {
       name: "Pritvi R",
