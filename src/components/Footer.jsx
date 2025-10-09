@@ -9,30 +9,11 @@ export default function Footer() {
         <div style={styles.brand}>
           <h3 style={styles.brandTitle}>ARQ</h3>
           <p style={styles.brandDesc}>
-            Building community and connections for students everywhere.
+            Igniting young minds to innovate and shape the future through AI.
           </p>
           <div style={styles.tagline}>
             <span style={styles.emoji}>🎓</span>
             <span>Empowering Future Leaders</span>
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div style={styles.section}>
-          <h4 style={styles.sectionTitle}>Quick Links</h4>
-          <div style={styles.links}>
-            <Link to="/" style={styles.link} className="footer-link">
-              <span style={styles.linkIcon}>🏠</span> Home
-            </Link>
-            <Link to="/about" style={styles.link} className="footer-link">
-              <span style={styles.linkIcon}>ℹ️</span> About
-            </Link>
-            <Link to="/events" style={styles.link} className="footer-link">
-              <span style={styles.linkIcon}>📅</span> Events
-            </Link>
-            <Link to="/gallery" style={styles.link} className="footer-link">
-              <span style={styles.linkIcon}>🖼️</span> Gallery
-            </Link>
           </div>
         </div>
 
@@ -44,16 +25,12 @@ export default function Footer() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
               </svg>
-              hello@collegeclub.edu
-            </p>
-            <p style={styles.contactItem}>
-              <span style={styles.contactIcon}>📞</span>
-              (555) 123-4567
+              arq@rajalakshmi.edu.in
             </p>
           </div>
           <div style={styles.socials}>
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/arqclubrec?igsh=MXQzcGR4M3Q2b2tl" 
               target="_blank" 
               rel="noopener noreferrer" 
               style={styles.socialIcon} 
@@ -64,18 +41,7 @@ export default function Footer() {
               </svg>
             </a>
             <a 
-              href="https://twitter.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              style={styles.socialIcon} 
-              className="footer-social"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-              </svg>
-            </a>
-            <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/company/arqclubrec/" 
               target="_blank" 
               rel="noopener noreferrer" 
               style={styles.socialIcon} 
@@ -83,17 +49,6 @@ export default function Footer() {
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <a 
-              href="https://collegeclub.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              style={styles.socialIcon} 
-              className="footer-social"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 13.8h-3.92v1.2h3.92v1.2H13.65v-6h3.92v1.2h-2.72v1.2h2.72v1.4zm-7.65-4.2H6v6h1.2v-2.4h2.52c1.319 0 1.8-.6 1.8-1.8s-.481-1.8-1.8-1.8zM7.2 11.4v-1.2h1.32c.528 0 .6.24.6.6s-.072.6-.6.6H7.2z"/>
               </svg>
             </a>
           </div>
@@ -105,7 +60,7 @@ export default function Footer() {
         <hr style={styles.line} />
         <div style={styles.bottomContent}>
           <p style={styles.copy}>
-            © {new Date().getFullYear()} College Club. All Rights Reserved.
+            © {new Date().getFullYear()} ARQ REC. All Rights Reserved.
           </p>
           <div style={styles.policies}>
             <Link to="/privacy" style={styles.policyLink} className="footer-link">
@@ -128,7 +83,7 @@ export default function Footer() {
           }
           
           .footer-link:hover {
-            color: #6a0dad !important;
+            color: #8b5cf6 !important;
             transform: translateY(-2px);
           }
           
@@ -139,7 +94,7 @@ export default function Footer() {
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, #6a0dad, #9d4edd);
+            background: linear-gradient(90deg, #8b5cf6, #a855f7);
             animation: slideIn 0.3s ease;
           }
           
@@ -150,7 +105,7 @@ export default function Footer() {
           
           .footer-social:hover {
             transform: scale(1.2) rotate(10deg);
-            filter: drop-shadow(0 4px 8px rgba(106, 13, 173, 0.3));
+            filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.4));
           }
           
           @keyframes slideIn {
@@ -168,6 +123,15 @@ export default function Footer() {
               flex-direction: column;
               gap: 10px;
             }
+            
+            .footer-brand {
+              text-align: center;
+              margin-bottom: 30px;
+            }
+            
+            .footer-section {
+              text-align: center;
+            }
           }
         `}
       </style>
@@ -177,127 +141,111 @@ export default function Footer() {
 
 const styles = {
   footer: {
-    background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
-    color: "#2c3e50",
-    padding: "40px 20px 20px",
-    marginTop: "40px",
-    borderTop: "3px solid #6a0dad",
+    background: "#000000",
+    color: "#ffffff",
+    padding: "20px 15px 15px",
+    marginTop: "30px",
     position: "relative",
     overflow: "hidden",
   },
   container: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "flex-start",
-    gap: "30px",
+    gap: "60px",
     maxWidth: "1200px",
     margin: "0 auto",
     className: "footer-container",
   },
   brand: {
-    flex: "2",
-    minWidth: "250px",
-    textAlign: "left",
+    flex: "1",
+    minWidth: "350px",
+    textAlign: "center",
+    className: "footer-brand",
   },
   brandTitle: {
-    marginBottom: "10px",
-    fontSize: "28px",
+    
+    fontSize: "36px",
     fontWeight: "bold",
-    background: "linear-gradient(45deg, #6a0dad, #9d4edd)",
+    background: "linear-gradient(45deg, #8b5cf6, #a855f7)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
   },
   brandDesc: {
-    margin: "0 0 15px 0",
-    fontSize: "16px",
-    color: "#5a6c7d",
-    lineHeight: "1.5",
+    margin: "0 0 25px 0",
+    fontSize: "18px",
+    color: "#d1d5db",
+    lineHeight: "1.6",
   },
   tagline: {
     display: "flex",
     alignItems: "center",
-    gap: "8px",
-    color: "#6a0dad",
-    fontSize: "14px",
-    fontWeight: "500",
+    justifyContent: "center",
+    gap: "12px",
+    color: "#8b5cf6",
+    fontSize: "16px",
+    fontWeight: "600",
   },
   emoji: {
-    fontSize: "18px",
+    fontSize: "22px",
   },
   section: {
     flex: "1",
-    minWidth: "180px",
-    textAlign: "left",
+    minWidth: "250px",
+    textAlign: "center",
+    className: "footer-section",
   },
   sectionTitle: {
-    marginBottom: "15px",
-    fontSize: "18px",
+    marginBottom: "25px",
+    fontSize: "22px",
     fontWeight: "600",
-    color: "#2c3e50",
-    borderBottom: "2px solid #6a0dad",
-    paddingBottom: "5px",
+    color: "#ffffff",
+    borderBottom: "3px solid #8b5cf6",
+    paddingBottom: "10px",
     display: "inline-block",
-  },
-  links: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px",
-  },
-  link: {
-    textDecoration: "none",
-    color: "#5a6c7d",
-    fontSize: "15px",
-    display: "flex",
-    alignItems: "center",
-    gap: "8px",
-    padding: "5px 0",
-  },
-  linkIcon: {
-    fontSize: "14px",
-    opacity: 0.8,
   },
   contact: {
-    marginBottom: "20px",
+    marginBottom: "30px",
   },
   contactItem: {
-    margin: "8px 0",
-    color: "#5a6c7d",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    gap: "8px",
-  },
-  contactIcon: {
+    margin: "0",
+    color: "#d1d5db",
     fontSize: "16px",
-  },
-  socials: {
-    display: "flex",
-    gap: "15px",
-    flexWrap: "wrap",
-  },
-  socialIcon: {
-    display: "inline-block",
-    width: "40px",
-    height: "40px",
-    borderRadius: "50%",
-    background: "linear-gradient(45deg, #6a0dad, #9d4edd)",
-    color: "white",
-    textDecoration: "none",
-    fontSize: "18px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    boxShadow: "0 4px 15px rgba(106, 13, 173, 0.2)",
+    gap: "10px",
+    fontWeight: "500",
+  },
+  socials: {
+    display: "flex",
+    gap: "20px",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+  socialIcon: {
+    display: "inline-block",
+    width: "50px",
+    height: "50px",
+    borderRadius: "50%",
+    background: "linear-gradient(45deg, #8b5cf6, #a855f7)",
+    color: "white",
+    textDecoration: "none",
+    fontSize: "22px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    boxShadow: "0 6px 20px rgba(139, 92, 246, 0.4)",
   },
   bottom: {
-    marginTop: "30px",
+    marginTop: "50px",
   },
   line: {
     border: "none",
-    borderTop: "1px solid #dee2e6",
-    margin: "0 0 20px 0",
+    borderTop: "1px solid #374151",
+    margin: "0 0 25px 0",
     opacity: 0.7,
   },
   bottomContent: {
@@ -305,26 +253,28 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     flexWrap: "wrap",
-    gap: "15px",
+    gap: "20px",
     className: "footer-bottom-content",
   },
   copy: {
     margin: 0,
-    fontSize: "14px",
-    color: "#6c757d",
+    fontSize: "15px",
+    color: "#9ca3af",
+    fontWeight: "500",
   },
   policies: {
     display: "flex",
     alignItems: "center",
-    gap: "10px",
+    gap: "15px",
   },
   policyLink: {
     textDecoration: "none",
-    color: "#6c757d",
-    fontSize: "14px",
+    color: "#9ca3af",
+    fontSize: "15px",
+    fontWeight: "500",
   },
   separator: {
-    color: "#6c757d",
-    fontSize: "14px",
+    color: "#9ca3af",
+    fontSize: "15px",
   },
 };

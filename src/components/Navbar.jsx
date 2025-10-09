@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import arq from "../photos/ARQ-LOGO .webp";
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -25,7 +26,7 @@ export default function Navbar() {
       }}>
         <div style={styles.brand}>
           <div style={styles.logoContainer}>
-            <img src="/logo.png" alt="Quizzards Logo" style={styles.logoImage} />
+            <img src={arq} alt="Quizzards Logo" style={styles.logoImage} />
           </div>
         </div>
 
@@ -65,8 +66,8 @@ export default function Navbar() {
           }}>
             <div style={styles.sidebarHeader}>
               <div style={styles.sidebarLogo}>
-                <span style={styles.sidebarLogoIcon}>🧠</span>
-                <span>Quizzards</span>
+                <span style={styles.sidebarLogoIcon}>☀️</span>
+                <span>ARQ</span>
               </div>
               <button style={styles.closeBtn} onClick={() => setMenuOpen(false)}>
                 ×
@@ -112,7 +113,7 @@ export default function Navbar() {
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
             transition: left 0.5s ease;
           }
 
@@ -122,8 +123,8 @@ export default function Navbar() {
 
           .nav-link:hover {
             transform: translateY(-3px);
-            color: #667eea !important;
-            text-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+            color: #8b5cf6 !important;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
           }
 
           .sidebar-link {
@@ -132,8 +133,8 @@ export default function Navbar() {
 
           .sidebar-link:hover {
             transform: translateX(15px) scale(1.05);
-            color: #ffd700 !important;
-            background: rgba(255, 255, 255, 0.1);
+            color: #8b5cf6 !important;
+            background: rgba(139, 92, 246, 0.2);
             border-radius: 12px;
             padding: 12px 16px !important;
           }
@@ -152,7 +153,7 @@ export default function Navbar() {
 
 const links = [
   { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
+  { label: "Team", to: "/team" },
   { label: "Events", to: "/events" },
   { label: "Gallery", to: "/gallery" },
 ];
@@ -164,29 +165,30 @@ const styles = {
     alignItems: "center",
     maxWidth: "1200px",
     margin: "20px auto",
+    marginBottom: "10px",
     padding: "15px 40px",
-    background: "rgba(102, 126, 234, 0.1)",
+    background: "rgba(0, 0, 0, 0.9)",
     backdropFilter: "blur(20px)",
     borderRadius: "50px",
-    border: "1px solid rgba(102, 126, 234, 0.2)",
+    border: "1px solid rgba(139, 92, 246,)",
     transition: "all 0.4s ease",
     position: "relative",
     zIndex: 10,
-    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
   },
   mobnav: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "20px 25px",
-    background: "rgba(102, 126, 234, 0.1)",
+    background: "rgba(0, 0, 0, 0.9)",
     backdropFilter: "blur(20px)",
     margin: "20px",
     borderRadius: "25px",
-    border: "1px solid rgba(102, 126, 234, 0.2)",
+    border: "1px solid rgba(139, 92, 246, 0.3)",
     position: "relative",
     zIndex: 10,
-    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
   },
   brand: {
     display: "flex",
@@ -201,7 +203,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     background: "rgba(255, 255, 255, 0.9)",
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 4px 12px rgba(139, 92, 246, 0.3)",
   },
   logoImage: {
     width: "100%",
@@ -214,14 +216,14 @@ const styles = {
     gap: "4px",
     cursor: "pointer",
     padding: "10px",
-    background: "rgba(102, 126, 234, 0.2)",
+    background: "rgba(139, 92, 246, 0.2)",
     borderRadius: "12px",
     transition: "all 0.3s ease",
   },
   hamburgerLine: {
     width: "25px",
     height: "3px",
-    backgroundColor: "#667eea",
+    backgroundColor: "#8b5cf6",
     borderRadius: "2px",
     transition: "all 0.3s ease",
   },
@@ -232,7 +234,7 @@ const styles = {
   },
   navLink: {
     textDecoration: "none",
-    color: "#333",
+    color: "#ffffff",
     fontWeight: "500",
     fontSize: "16px",
     padding: "10px 18px",
@@ -240,8 +242,8 @@ const styles = {
     display: "flex",
     alignItems: "center",
     gap: "8px",
-    background: "rgba(102, 126, 234, 0.1)",
-    border: "1px solid rgba(102, 126, 234, 0.2)",
+    background: "rgba(139, 92, 246, 0.1)",
+    border: "1px solid rgba(139, 92, 246, 0.3)",
   },
   backdrop: {
     position: "fixed",
@@ -249,7 +251,7 @@ const styles = {
     left: 0,
     right: 0,
     bottom: 0,
-    background: "rgba(0, 0, 0, 0.5)",
+    background: "rgba(0, 0, 0, 0.7)",
     backdropFilter: "blur(5px)",
     zIndex: 998,
   },
@@ -259,19 +261,20 @@ const styles = {
     right: 0,
     height: "100vh",
     width: "300px",
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    boxShadow: "-10px 0 30px rgba(0,0,0,0.3)",
+    background: "linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)",
+    boxShadow: "-10px 0 30px rgba(0, 0, 0, 0.5)",
     zIndex: 999,
     transition: "all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
     display: "flex",
     flexDirection: "column",
+    border: "1px solid rgba(139, 92, 246, 0.2)",
   },
   sidebarHeader: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "25px",
-    borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+    borderBottom: "1px solid rgba(139, 92, 246, 0.3)",
   },
   sidebarLogo: {
     display: "flex",
@@ -286,8 +289,8 @@ const styles = {
   },
   closeBtn: {
     fontSize: "30px",
-    background: "rgba(255, 255, 255, 0.2)",
-    border: "none",
+    background: "rgba(139, 92, 246, 0.2)",
+    border: "1px solid rgba(139, 92, 246, 0.3)",
     borderRadius: "50%",
     width: "40px",
     height: "40px",
@@ -296,6 +299,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    transition: "all 0.3s ease",
   },
   sidebarContent: {
     flex: 1,
