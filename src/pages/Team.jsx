@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import biAssociate1 from "../photos/BI associate 1.webp";
 import biAssociate2 from "../photos/BI associate 2.webp";
 import biCoLead from "../photos/BI co lead.webp";
-import biLead from "../photos/BI lead.webp";// Management Team (excluding CEO/HR/President/VP/Secretary)
+import biLead from "../photos/BI lead.webp";
+
+// Management Team (excluding CEO/HR/President/VP/Secretary)
 import managementAssociate2 from "../photos/management Associate 2.webp";
 import managementCoLead from "../photos/management colead.webp";
 import managementLead from "../photos/Management Lead.webp";
@@ -30,16 +32,14 @@ import dataAnalyticsLead from "../photos/Data Analytics Lead.webp";
 
 import mlAssociate1 from "../photos/ml associate 1.webp";
 import mlAssociate2 from "../photos/ml  associate 2.webp";
-import mlCoLead from "../photos/ml co lead.webp";
+import mlCoLead from "../photos/ml colead.webp";
 import mlLead from "../photos/ml lead.webp";
 
-// Data Security Team
 // Data Security Team
 import dataSecurityAssociate from "../photos/Data security associate.webp";
 import dataSecurityAssociate2 from "../photos/data security associate 2.webp";
 import dataSecurityCoLead from "../photos/data Security co lead.webp";
 import dataSecurityLead from "../photos/data Security lead.webp";
-
 
 // Design & Media Team
 import designAndMediaAssociate from "../photos/design and media associate.webp";
@@ -48,6 +48,7 @@ import designAssociate1 from "../photos/design associate 1.webp";
 import designCoLead from "../photos/design co lead.webp";
 import designLead2 from "../photos/design lead 2.webp";
 import designLead from "../photos/Design lead.webp";
+
 // Event Team
 import eventAssociate from "../photos/event associate.webp";
 import eventCoLead from "../photos/event co lead.webp";
@@ -117,6 +118,12 @@ export default function TeamPage() {
       image: vicePresident,
       linkedin: "https://www.linkedin.com/in/kumaran-d-106893270/"
     },
+      {
+      name: "Pritvi R",
+      position: "CEO",
+      image: ceo,
+      linkedin: "https://linkedin.com/in/pritvir"
+    },
     {
       name: "Harini S",
       position: "Secretary",
@@ -128,12 +135,6 @@ export default function TeamPage() {
       position: "HR",
       image: hr,
       linkedin: "https://www.linkedin.com/in/hannah-james-36129b288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-    },
-    {
-      name: "Pritvi R",
-      position: "CEO",
-      image: ceo,
-      linkedin: "https://linkedin.com/in/pritvir"
     }
   ];
 
@@ -144,7 +145,7 @@ export default function TeamPage() {
       icon: Code,
       color: "#3b82f6",
       members: [
-        { name: "Web Dev Lead", role: "Lead", image: webDevLead, linkedin: "www.linkedin.com/in/sanjaykishore-t-0931942a2"},
+        { name: "Web Dev Lead", role: "Lead", image: webDevLead, linkedin: "https://www.linkedin.com/in/sanjaykishore-t-0931942a2/" },
         { name: "Web Dev Co-Lead", role: "Co-Lead", image: webDevCoLead, linkedin: "https://www.linkedin.com/in/shalini-k-39a1912a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
         { name: "Web Dev Associate ", role: "Associate", image: webDevAssociate1, linkedin: "https://www.linkedin.com/in/sanjaykumar-sg-3b441a330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
         { name: "Web Dev Associate ", role: "Associate", image: webDevAssociate2, linkedin: "https://www.linkedin.com/in/lejo-c-436a94318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
@@ -167,7 +168,7 @@ export default function TeamPage() {
       color: "#f97316",
       members: [
         { name: "ML Lead", role: "Lead", image: mlLead, linkedin: "https://www.linkedin.com/in/sakthi-mukesh-t?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-        { name: "ML Co-Lead", role: "Co-Lead", image: mlCoLead, linkedin: "www.linkedin.com/in/ragulg06" },
+        { name: "ML Co-Lead", role: "Co-Lead", image: mlCoLead, linkedin: "https://www.linkedin.com/in/ragulg06/" },
         { name: "ML Associate ", role: "Associate", image: mlAssociate1, linkedin: "https://linkedin.com/in/mlassociate1" },
         { name: "ML Associate ", role: "Associate", image: mlAssociate2, linkedin: "https://linkedin.com/in/mlassociate2" }
       ]
@@ -413,11 +414,32 @@ export default function TeamPage() {
         }
 
         .executives-flow {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 4rem 3rem;
-          align-items: flex-start;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 3rem;
+          justify-items: center;
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+
+        .executives-flow .executive-member:nth-child(1) {
+          grid-column: 1 / 3;
+        }
+
+        .executives-flow .executive-member:nth-child(2) {
+          grid-column: 3 / 5;
+        }
+
+        .executives-flow .executive-member:nth-child(3) {
+          grid-column: 5 / 7;
+        }
+
+        .executives-flow .executive-member:nth-child(4) {
+          grid-column: 2 / 4;
+        }
+
+        .executives-flow .executive-member:nth-child(5) {
+          grid-column: 4 / 6;
         }
 
         /* Executive member as a white frame card */
@@ -431,6 +453,7 @@ export default function TeamPage() {
           transition: all 0.4s ease;
           flex: 0 0 auto;
           max-width: 280px;
+          width: 100%;
           background: #ffffff; /* white frame */
           border: 1px solid rgba(168, 85, 247, 0.25);
           border-radius: 16px;
@@ -788,7 +811,18 @@ export default function TeamPage() {
           .section-title { font-size: 2rem; }
           .page-header { margin-bottom: 4rem; }
           .executives-section { margin-bottom: 6rem; }
-          .executives-flow { flex-direction: column; align-items: center; gap: 3rem; }
+          .executives-flow { 
+            grid-template-columns: 1fr; 
+            gap: 3rem; 
+            max-width: none;
+          }
+          .executives-flow .executive-member:nth-child(1),
+          .executives-flow .executive-member:nth-child(2),
+          .executives-flow .executive-member:nth-child(3),
+          .executives-flow .executive-member:nth-child(4),
+          .executives-flow .executive-member:nth-child(5) {
+            grid-column: 1;
+          }
           .domains-flow { grid-template-columns: 1fr; gap: 4rem 0; margin-top: 1rem; }
           .domain-area { padding: 1rem; }
           .member-image { width: 150px; height: 150px; }
@@ -821,7 +855,7 @@ export default function TeamPage() {
             </p>
           </div>
 
-          {/* Executive Section - Organic Flow */}
+          {/* Executive Section - 3-2 Grid Layout with Centered Bottom Row */}
           <div className="executives-section">
             <h2 className="section-title">Executive Team</h2>
             <div className="executives-flow">

@@ -9,7 +9,7 @@ export default function Footer() {
         <div style={styles.brand}>
           <h3 style={styles.brandTitle}>ARQ</h3>
           <p style={styles.brandDesc}>
-            Igniting young minds to innovate and shape the future through AI.
+            when Data Speaks! ARQ Listens!
           </p>
           <div style={styles.tagline}>
             <span style={styles.emoji}>🎓</span>
@@ -63,13 +63,10 @@ export default function Footer() {
             © {new Date().getFullYear()} ARQ REC. All Rights Reserved.
           </p>
           <div style={styles.policies}>
-            <Link to="/privacy" style={styles.policyLink} className="footer-link">
-              Privacy Policy
-            </Link>
-            <span style={styles.separator}>•</span>
-            <Link to="/terms" style={styles.policyLink} className="footer-link">
-              Terms of Service
-            </Link>
+          <p>
+            Website by <a href="https://sanjaykishore18.github.io/Sanjaykishore18/" target="_blank" rel="noopener noreferrer" style={{ color: "#8b5cf6" }}>SanjayKishore T</a> &amp; <a href="https://yourassociateportfolio.com" target="_blank" rel="noopener noreferrer" style={{ color: "#8b5cf6" }}>Shalini K</a> Assisted by-Sanjay kumar, Lejo
+          </p>
+
           </div>
         </div>
       </div>
@@ -143,8 +140,8 @@ const styles = {
   footer: {
     background: "#000000",
     color: "#ffffff",
-    padding: "20px 15px 15px",
-    marginTop: "30px",
+    padding: "30px 15px 15px",
+    marginTop: "5px",
     position: "relative",
     overflow: "hidden",
   },
@@ -207,7 +204,7 @@ const styles = {
     display: "inline-block",
   },
   contact: {
-    marginBottom: "30px",
+    marginBottom: "15px",
   },
   contactItem: {
     margin: "0",
@@ -240,7 +237,8 @@ const styles = {
     boxShadow: "0 6px 20px rgba(139, 92, 246, 0.4)",
   },
   bottom: {
-    marginTop: "50px",
+    marginTop: "10px",
+    marginBottom: "10px",
   },
   line: {
     border: "none",

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import arq from "../photos/ARQ-LOGO .webp";
 
 export default function Navbar() {
@@ -10,9 +11,7 @@ export default function Navbar() {
       setIsMobile(window.innerWidth <= 768);
       if (window.innerWidth > 768) setMenuOpen(false);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -26,10 +25,12 @@ export default function Navbar() {
       }}>
         <div style={styles.brand}>
           <div style={styles.logoContainer}>
-            <img src={arq} alt="Quizzards Logo" style={styles.logoImage} />
+            <img src={arq} alt="ARQ Logo" style={styles.logoImage} />
+          </div>
+          <div style={styles.titleContainer}>
+            <span style={styles.title}>Analysis | Research | Quant</span>
           </div>
         </div>
-
         {isMobile && (
           <div style={styles.hamburger} onClick={() => setMenuOpen(true)}>
             <div style={styles.hamburgerLine}></div>
@@ -37,18 +38,16 @@ export default function Navbar() {
             <div style={styles.hamburgerLine}></div>
           </div>
         )}
-
         {!isMobile && (
           <div style={styles.links}>
             {links.map((item, i) => (
-              <a key={i} href={item.to} className="nav-link" style={styles.navLink}>
+              <Link key={i} to={item.to} className="nav-link" style={styles.navLink}>
                 <span>{item.label}</span>
-              </a>
+              </Link>
             ))}
           </div>
         )}
       </nav>
-
       {/* Mobile Sidebar */}
       {isMobile && (
         <>
@@ -58,7 +57,6 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             ></div>
           )}
-
           <div style={{
             ...styles.sidebar,
             transform: menuOpen ? "translateX(0)" : "translateX(100%)",
@@ -73,39 +71,35 @@ export default function Navbar() {
                 ×
               </button>
             </div>
-
             <div style={styles.sidebarContent}>
               {links.map((item, i) => (
-                <a
+                <Link
                   key={i}
-                  href={item.to}
+                  to={item.to}
                   className="sidebar-link"
                   style={styles.sidebarLink}
                   onClick={() => setMenuOpen(false)}
                 >
                   <span>{item.label}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
         </>
       )}
-
-      {/* CSS Animations */}
+      {/* CSS Animations - Same as before */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
           * {
             font-family: 'Inter', sans-serif;
           }
-
           .nav-link {
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             position: relative;
             overflow: hidden;
+            text-decoration: none; /* Important for Link components */
           }
-
           .nav-link::before {
             content: '';
             position: absolute;
@@ -116,21 +110,18 @@ export default function Navbar() {
             background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
             transition: left 0.5s ease;
           }
-
           .nav-link:hover::before {
             left: 100%;
           }
-
           .nav-link:hover {
             transform: translateY(-3px);
             color: #8b5cf6 !important;
             text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
           }
-
           .sidebar-link {
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-decoration: none; /* Important for Link components */
           }
-
           .sidebar-link:hover {
             transform: translateX(15px) scale(1.05);
             color: #8b5cf6 !important;
@@ -138,7 +129,6 @@ export default function Navbar() {
             border-radius: 12px;
             padding: 12px 16px !important;
           }
-
           @media (max-width: 768px) {
             .hero-stats {
               flex-direction: column;
@@ -151,21 +141,23 @@ export default function Navbar() {
   );
 }
 
+// CORRECTED LINKS ARRAY - Remove the "../" prefixes
 const links = [
   { label: "Home", to: "/" },
-  { label: "Team", to: "/team" },
-  { label: "Events", to: "/events" },
-  { label: "Gallery", to: "/gallery" },
+  { label: "Team", to: "/team" },        // Changed from "../team"
+  { label: "Events", to: "/events" },    // Changed from "../events"
+  { label: "Gallery", to: "/gallery" },  // Changed from "../gallery"
 ];
 
+// Same styles object as before...
 const styles = {
+  // ... your existing styles remain unchanged
   nav: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     maxWidth: "1200px",
-    margin: "20px auto",
-    marginBottom: "10px",
+    margin: "10px auto",
     padding: "15px 40px",
     background: "rgba(0, 0, 0, 0.9)",
     backdropFilter: "blur(20px)",
@@ -180,10 +172,10 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "20px 25px",
+    padding: "4px 10px",
     background: "rgba(0, 0, 0, 0.9)",
     backdropFilter: "blur(20px)",
-    margin: "20px",
+    margin: "5px 10px",
     borderRadius: "25px",
     border: "1px solid rgba(139, 92, 246, 0.3)",
     position: "relative",
@@ -193,6 +185,7 @@ const styles = {
   brand: {
     display: "flex",
     alignItems: "center",
+    gap: "15px",
   },
   logoContainer: {
     width: "50px",
@@ -209,6 +202,25 @@ const styles = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
+  },
+  titleContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+  title: {
+    color: "#ffffff",
+    fontSize: "16px",
+    fontWeight: "500",
+    lineHeight: "1.2",
+    textShadow: "0 0 10px rgba(139, 92, 246, 0.5)",
+  },
+  subtitle: {
+    color: "#8b5cf6",
+    fontSize: "12px",
+    fontWeight: "500",
+    lineHeight: "1",
+    opacity: 0.9,
   },
   hamburger: {
     display: "flex",

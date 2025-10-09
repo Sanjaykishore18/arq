@@ -1,6 +1,10 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Target, Eye, Award, Users, Calendar, Trophy, ArrowRight, Clock, Star, Rocket, Globe, Plus, Minus } from 'lucide-react';
 import banner from '../photos/banner.webp'
+import banner3 from '../photos/banner 3.webp'
+import { useNavigate } from 'react-router-dom';
+
 export default function ClubHomepage() {
   const [currentBanner, setCurrentBanner] = useState(0);
   const [activeTab, setActiveTab] = useState('mission');
@@ -8,26 +12,30 @@ export default function ClubHomepage() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [openFAQ, setOpenFAQ] = useState(null);
   const statsRef = useRef(null);
-const banners = [
-  {
-    id: 1,
-    title: "Welcome to ARQ Analytics",
-    subtitle: "Transforming Data into Insights",
-    image: banner
-  },
-  {
-    id: 2,
-    title: "Data-Driven Excellence",
-    subtitle: "Analyze • Visualize • Innovate",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
-  },
-  {
-    id: 3,
-    title: "Master Data Science",
-    subtitle: "From Raw Data to Meaningful Solutions",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&h=600&fit=crop"
-  }
-];
+  const navigate = useNavigate();
+
+  const banners = [
+    {
+      id: 1,
+      title: "Welcome to ARQ",
+      subtitle: "Where Excellence Meets Passion",
+      image: banner
+    },
+    {
+      id: 2,
+      title: "Data-Driven Excellence",
+      subtitle: "Analyze • Visualize • Innovate",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
+    },
+    {
+      id: 3,
+      title: "Experience Innovation",
+      subtitle: "Building Tomorrow's Leaders Today",
+      image: banner3
+    }
+
+  ];
+
   const mvvContent = {
     mission: {
       icon: Target,
@@ -62,7 +70,7 @@ const banners = [
     {
       year: "February 2025",
       title: "Foundation",
-      description: "The ARQ Club Inauguration – UTOPIA’25 (Launch Edition) marked the official launch of the club, featuring inspiring sessions by industry leaders on AI innovation and entrepreneurship. The event celebrated the club’s vision to empower students in research, creativity, and future technology ventures.",
+      description: "The ARQ Club Inauguration – UTOPIA'25 (Launch Edition) marked the official launch of the club, featuring inspiring sessions by industry leaders on AI innovation and entrepreneurship. The event celebrated the club's vision to empower students in research, creativity, and future technology ventures.",
       icon: Rocket
     },
     {
@@ -90,7 +98,7 @@ const banners = [
     },
     {
       question: "What kind of activities does the club organize?",
-answer: "The club hosts workshops, hackathons, tech talks, and innovation challenges focused on AI, data science, and emerging technologies — giving members hands-on experience and networking opportunities."
+      answer: "The club hosts workshops, hackathons, tech talks, and innovation challenges focused on AI, data science, and emerging technologies — giving members hands-on experience and networking opportunities."
     },
     {
       question: "How do I join?",
@@ -775,7 +783,7 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
           transition: all 0.4s ease;
         }
 
-        .timeline-content {
+        .timeline-content-item {
           background: rgba(139, 92, 246, 0.1);
           backdrop-filter: blur(10px);
           border: 1px solid rgba(139, 92, 246, 0.2);
@@ -784,7 +792,7 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
           transition: all 0.4s ease;
         }
 
-        .timeline-item:hover .timeline-content {
+        .timeline-item:hover .timeline-content-item {
           background: rgba(139, 92, 246, 0.2);
           border-color: rgba(139, 92, 246, 0.4);
           transform: translateX(10px);
@@ -1197,7 +1205,7 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
           100% { transform: rotateZ(0deg); }
         }
 
-        /* MOBILE RESPONSIVE STYLES */
+        /* MOBILE RESPONSIVE STYLES - UPDATED WITH ALL FIXES */
         @media (max-width: 768px) {
           
           /* Hero Section Mobile */
@@ -1285,11 +1293,12 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
             font-size: 0.875rem;
           }
           
-          /* MVV Section Mobile */
+          /* MVV Section Mobile - INCREASED PADDING AND FIXED OVERLAPPING */
           .mvv-section {
-            padding: 4rem 0;
-            clip-path: none;
-            margin-bottom: 0;
+            padding: 4rem 0 8rem; /* INCREASED bottom padding from 6rem to 8rem */
+            clip-path: none; /* Removed clip-path to prevent overlapping */
+            margin-bottom: 0; /* Reset margin-bottom */
+            overflow: hidden;
           }
           
           .section-header h2 {
@@ -1322,32 +1331,36 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
             display: none; /* Hide timeline on mobile */
           }
           
-          /* New Tab Buttons Mobile */
+          /* UPDATED - Tab Buttons Mobile - HORIZONTAL LAYOUT */
           .tab-buttons {
-            flex-direction: column;
-            gap: 0.75rem;
+            flex-direction: row; /* CHANGED from column to row */
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem; /* REDUCED gap for tighter layout */
             margin-bottom: 3rem;
             background: rgba(255, 255, 255, 0.05);
-            padding: 1rem;
+            padding: 0.75rem; /* REDUCED padding */
+            border-radius: 50px;
           }
           
           .tab-btn {
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
+            padding: 0.75rem 1rem; /* SMALLER padding */
+            font-size: 0.875rem; /* SMALLER font size */
+            border-radius: 25px; /* SMALLER border radius */
+            flex: 1; /* Equal width distribution */
+            min-width: auto; /* Remove min-width constraint */
+            max-width: calc(33.333% - 0.5rem); /* Limit width to fit 3 buttons */
             justify-content: center;
-            border-radius: 1rem;
+            text-align: center;
+            white-space: nowrap; /* Prevent text wrapping */
           }
-
+          
           .tab-icon {
-            width: 1.25rem;
-            height: 1.25rem;
+            width: 1rem; /* SMALLER icon */
+            height: 1rem;
           }
           
-          /* New Content Area Mobile */
-          .content-area {
-            padding: 0;
-          }
-          
+          /* HIDE PURPLE ICON IN MOBILE - Content Header Mobile */
           .content-header {
             flex-direction: column;
             text-align: center;
@@ -1355,15 +1368,9 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
             margin-bottom: 2rem;
           }
           
+          /* HIDE THE LARGE PURPLE ICON ON MOBILE */
           .content-icon-large {
-            width: 6rem;
-            height: 6rem;
-            margin: 0 auto;
-          }
-
-          .content-icon-large svg {
-            width: 3rem;
-            height: 3rem;
+            display: none; /* HIDDEN - This hides the purple symbol/icon */
           }
 
           .content-title-area h3 {
@@ -1383,9 +1390,20 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
             text-align: center;
           }
           
+          /* Tab Content Mobile - INCREASED MINIMUM HEIGHT TO PREVENT OVERLAPPING */
+          .tab-content {
+            min-height: 35rem; /* INCREASED from 28rem to 35rem */
+            margin-bottom: 4rem; /* ADDED extra margin for more space */
+          }
+
+          .content-area {
+            padding: 0 0 3rem; /* ADDED bottom padding */
+          }
+          
           .highlights-container {
             justify-content: center;
             gap: 0.75rem;
+            margin-bottom: 3rem; /* ADDED margin bottom for more space */
           }
 
           .highlight-pill {
@@ -1397,12 +1415,13 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
             font-size: 1rem;
           }
           
-          /* FAQ & CTA Section Mobile */
+          /* FAQ & CTA Section Mobile - FIXED OVERLAPPING ISSUE */
           .faq-cta-section {
             flex-direction: column;
             min-height: auto;
-            clip-path: none;
-            padding-top: 0;
+            clip-path: none; /* Removed clip-path */
+            padding-top: 6rem; /* INCREASED padding-top for more separation */
+            margin-top: 4rem; /* INCREASED margin-top for more space */
           }
 
           .faq-side, .cta-side {
@@ -1476,7 +1495,7 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
           }
         }
 
-        /* EXTRA SMALL MOBILE */
+        /* EXTRA SMALL MOBILE - UPDATED FOR TAB BUTTONS */
         @media (max-width: 480px) {
           .banner-title {
             font-size: 2rem;
@@ -1510,16 +1529,6 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
             padding: 2rem 1.5rem;
           }
 
-          .content-icon-large {
-            width: 5rem;
-            height: 5rem;
-          }
-
-          .content-icon-large svg {
-            width: 2.5rem;
-            height: 2.5rem;
-          }
-
           .content-description {
             font-size: 1.125rem;
           }
@@ -1530,6 +1539,35 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
 
           .highlight-pill span {
             font-size: 0.875rem;
+          }
+          
+          /* UPDATED - Tab buttons for very small screens */
+          .tab-btn {
+            padding: 0.75rem 0.5rem; /* Adjust padding for smaller screens */
+            font-size: 0.75rem; /* Even smaller font */
+            gap: 0.25rem; /* Smaller gap between icon and text */
+          }
+          
+          .tab-btn .tab-icon {
+            width: 0.875rem;
+            height: 0.875rem;
+          }
+          
+          /* Keep text but make it smaller */
+          .tab-btn span {
+            font-size: 0.75rem;
+          }
+
+          /* INCREASED MOBILE CONTENT HEIGHT FOR SMALL SCREENS */
+          .tab-content {
+            min-height: 30rem; /* INCREASED even more for small screens */
+            margin-bottom: 0.1rem; /* More bottom margin */
+          }
+
+          /* FAQ Section - More space for small screens */
+          .faq-cta-section {
+            padding-top: 0.1rem; /* Even more padding for small screens */
+            margin-top: 0.1rem; /* More margin */
           }
         }
       `}</style>
@@ -1554,7 +1592,7 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
                 <div className="banner-text">
                   <h1 className="banner-title">{banner.title}</h1>
                   <p className="banner-subtitle">{banner.subtitle}</p>
-                  <button className="explore-btn">
+                  <button className="explore-btn" onClick={() => navigate("/events")}>
                     Explore More <ArrowRight className="arrow-icon" />
                   </button>
                 </div>
@@ -1626,7 +1664,7 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
                         className={`tab-btn ${activeTab === key ? 'active' : ''}`}
                       >
                         <Icon className="tab-icon" />
-                        {content.title}
+                        <span>{content.title}</span>
                       </button>
                     );
                   })}
@@ -1685,7 +1723,7 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
                           <div className="timeline-dot">
                             <Icon />
                           </div>
-                          <div className="timeline-content">
+                          <div className="timeline-content-item">
                             <div className="timeline-year">{event.year}</div>
                             <div className="timeline-title">{event.title}</div>
                             <div className="timeline-description">{event.description}</div>
@@ -1737,8 +1775,8 @@ answer: "The club hosts workshops, hackathons, tech talks, and innovation challe
               <h2>Ready to Join Us?</h2>
               <p>Become part of a thriving community of innovators, leaders, and change-makers</p>
               <div className="cta-buttons">
-                <button className="btn-primary">Join Now</button>
-                <button className="btn-secondary">Learn More</button>
+                <a className="btn-primary" href="https://chat.whatsapp.com/FQat2k9e8LK9LD7vUgma7q?mode=ems_share_t">Join Now</a>
+                <a className="btn-secondary" href="./events">Learn More</a>
               </div>
             </div>
           </div>
